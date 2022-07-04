@@ -1,0 +1,36 @@
+{% extends "padre.html" %}
+{%load static%}
+{% block contenidoQueCambia %}
+
+<main>
+<div class="contenedor" style="width:60% ; margin-left: 20%; margin-top: 10px;">
+    <h2 style="text-align: center;">Cuentanos sobre ti!</h2>
+    <form action="alta_personas" method="get">
+        
+        <div class="row g-3">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Apellido" name="apellido" required>
+            </div>
+          </div>
+          <div class="row g-3" style="margin-top:3px ;">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Nacionalidad"  name="nacionalidad" required>
+            </div>
+            <div class="col">
+              <input type="number" class="form-control" placeholder="Edad"  name="edad" required>
+            </div>
+            <div class="col-6">
+              <input type="text" class="form-control" placeholder="Cuentanos algo sobre ti!" name="texto" required>
+            </div>
+            
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top: 5px;">ENVIAR</button>
+
+    </form>
+</div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "padre.html" %}
+{%load static%}
+{% block contenidoQueCambia %}
+
+<main>
+<div class="contenedora" style="text-align: center; padding: 10px; font-family: 'Gentium Book Plus', serif;">
+    <div> <h1> {{historia.titulo}}</h1></div>
+    <div>
+        <h5>{{historia.subtitulo}}</h5>
+        <p style="font-size: 20px; margin-top: 30px;">{{historia.texto}}</p>
+        <p>Escrita por {{historia.autor}} en la fecha {{historia.fecha}}</p>
+    </div>
+
+</div>
+</main>
+
+{% endblock %}

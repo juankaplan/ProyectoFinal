@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Landing Page - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'app_blog/css/styles.css' %}" rel="stylesheet" />
+        <style>
+            body{background-image: url("{% static 'app_blog/assets/img/register_background.jpg' %}"); width: 100%;}
+            .contenedor{width: 30%; margin-left:38%; margin-top:200px; padding: 20px; }
+            .link{text-decoration: none; color: white; }
+            .link:hover{color: white;}
+            .caja{margin-top: 20px; margin-bottom: 20px;}
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="contenedor" >
+                <div>
+                    <p style="color: red; text-align: center;">{{texto}}</p>
+                </div>
+                <div><h2>Iniciar Sesion</h2></div>
+                <form action="login_request" method="post">
+                    {% csrf_token %}
+
+                    <div class="caja">
+
+
+                        <div class="caja">
+                            <p>
+                                <label for="id_username">Usuario:</label>
+                                <input class= "form-control" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+                            </p>
+                            <p>
+                                <label for="id_password">Contraseña:</label>
+                                <input class="form-control" type="password" name="password" autocomplete="current-password" required="" id="id_password">
+                            </p>
+                        
+                            
+                        
+                        
+                        
+                        
+                        
+                        </div>
+
+
+                    </div>
+
+
+
+                
+            
+              <button type="submit" class="btn btn-primary" style="margin-top: 5px; ">Iniciar Sesion</button>
+              </form>
+              <h6 style="margin-top: 30px;">No tienes cuenta?</h6>
+              <button type="submit" class="btn btn-primary" ><a class="link" href="{% url 'registrarse' %}">Registrarse</a></button>
+            </div>
+                
+            
+
+        </main>
+
+
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

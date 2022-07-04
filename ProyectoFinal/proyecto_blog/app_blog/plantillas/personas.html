@@ -1,0 +1,43 @@
+{% extends "padre.html" %}
+{%load static%}
+{% block contenidoQueCambia %}
+
+<main>
+<div class="contenedora" style="width: 80%; margin: 20px;">
+    <h2>Buscar Personas</h2>
+    <form action="buscarPersona" method="post">
+        {% csrf_token %}
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Apellido" name="apellido" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top: 5px;">ENVIAR</button>
+    </form>
+    
+    
+    {% for n in persona %}
+    
+    <div style="margin-top: 10px; padding: 5px">
+    <h3 class="texto">Nombre:</h3>
+    <h5>{{n.nombre}}</h5>
+    <h3 class="texto">Apellido:</h3>
+    <h5>{{n.apellido}}</h5>
+    <h3 class="texto">Nacionalidad:</h3>
+    <h5>{{n.nacionalidad}}</h5>
+    <h3 class="texto">Edad:</h3>
+    <h5>{{n.edad}}</h5>
+    <h3 class="texto">Comentario:</h3>
+    <h5>{{n.texto}}</h5>
+    </div>
+
+    
+    
+
+    {%endfor%}
+
+</div>
+</main>
+
+{% endblock %}
